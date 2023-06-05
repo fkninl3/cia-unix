@@ -110,7 +110,7 @@ Dir["*.cia"].each do |cia|
     content = %x[./ctrtool '#{cia}']
 
     # game
-    if content.match /T.*d.*00040000/
+    if content.match /T.*d.*00040000/i
         puts "CIA Type: Game"
         log.puts %x[python2.7 decrypt.py '#{cia}']
         
@@ -121,7 +121,7 @@ Dir["*.cia"].each do |cia|
         end
         log.puts %x[./makerom -f cia -ignoresign -target p -o '#{cutn}-decfirst.cia' #{args}]
     # patch
-    elsif content.match /T.*d.*0004000E/
+    elsif content.match /T.*d.*0004000E/i
         puts "CIA Type: #{"Patch".colorize.mode(:bold)}"
         log.puts %x[python2.7 decrypt.py '#{cia}']
 
@@ -131,7 +131,7 @@ Dir["*.cia"].each do |cia|
         log.puts %x[./makerom -f cia -ignoresign -target p -o '#{cutn} (Patch)-decrypted.cia' #{args}]
         check_decrypt("#{cutn} (Patch)", "cia")
     # dlc
-    elsif content.match /T.*d.*0004008C/
+    elsif content.match /T.*d.*0004008C/i
         puts "CIA Type: #{"DLC".colorize.mode(:bold)}"
         log.puts %x[python2.7 decrypt.py '#{cia}']
 

@@ -1,7 +1,8 @@
 # cia-unix
 
 *Decrypt CIA roms in UNIX environments* 🪐
-*Fork of shijimasoft cia-unix repository. Changed the matching case to ignore case because my build of crystal regex is case sensitive.
+<br></br>
+<br>Fork of shijimasoft cia-unix repository. Changed the matching case to ignore case because my build of crystal regex is case sensitive.</br>
 
 #### Requirements
 * [Python 2.7](https://www.python.org/downloads/release/python-2718/)
